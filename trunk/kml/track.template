@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+  <Document>
+    <Placemark>
+      <name>Trail</name>
+      <visibility>1</visibility>
+      <Style>
+        <LineStyle>
+          <color>CC33CC00</color>
+          <width>3</width>
+        </LineStyle>
+      </Style>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>$trail</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

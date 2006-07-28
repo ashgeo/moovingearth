@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+  <Document>
+    <name>Mooving Earth - $servername</name>
+    <open>1</open>
+    <!--
+    <Style id="4001:default select all (site) (highlight)">
+      <IconStyle>
+        <Icon>
+          <href>http://kh.google.com:80/flatfile?lf-0-icons/airports_new_nh.png</href>
+          <y>32</y>
+          <w>32</w>
+          <h>32</h>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <color>ff7fffff</color>
+      </LabelStyle>
+      <LineStyle>
+        <antialias>0</antialias>
+      </LineStyle>
+      <PolyStyle>
+        <fill>0</fill>
+        <outline>0</outline>
+      </PolyStyle>
+    </Style>
+    <Style id="4001:default select all (site) (normal)">
+      <IconStyle>
+        <Icon>
+          <href>http://kh.google.com:80/flatfile?lf-0-icons/airports_new_nh.png</href>
+          <w>32</w>
+          <h>32</h>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <color>ff7fffff</color>
+      </LabelStyle>
+      <LineStyle>
+        <antialias>0</antialias>
+      </LineStyle>
+      <PolyStyle>
+        <fill>0</fill>
+        <outline>0</outline>
+      </PolyStyle>
+    </Style>
+    <StyleMap id="4001">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#4001:default select all (site) (normal)</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#4001:default select all (site) (highlight)</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="khStyle764">
+      <IconStyle id="khIconStyle765">
+        <Icon>
+          <href>root://icons/palette-3.png</href>
+          <w>32</w>
+          <h>32</h>
+        </Icon>
+      </IconStyle>
+    </Style>
+    -->
+    <!-- VIEWS -->
+
+    <NetworkLink>
+      <name>Chase View</name>
+      <visibility>0</visibility>
+      <open>1</open>
+      <flyToView>1</flyToView>
+      <Url>
+        <href>http://$hostaddress/view/chase</href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>1</refreshInterval>
+      </Url>
+    </NetworkLink>
+    <NetworkLink>
+      <name>Plane View - Right</name>
+      <visibility>0</visibility>
+      <open>1</open>
+      <flyToView>1</flyToView>
+      <Url>
+        <href>http://$hostaddress/view/plane?right</href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>1</refreshInterval>
+      </Url>
+    </NetworkLink>
+    <NetworkLink>
+      <name>Plane View - Left</name>
+      <visibility>0</visibility>
+      <open>1</open>
+      <flyToView>1</flyToView>
+      <Url>
+        <href>http://$hostaddress/view/plane?left</href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>1</refreshInterval>
+      </Url>
+    </NetworkLink>
+    
+    <!-- DATA -->    
+    
+    <NetworkLink>
+      <name>GPS Position</name>
+      <visibility>0</visibility>
+      <open>1</open>
+      <Url>
+        <href>http://$hostaddress/data/position?abs</href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>1</refreshInterval>
+      </Url>
+    </NetworkLink>
+    <NetworkLink>
+      <name>Ground Position</name>
+      <visibility>0</visibility>
+      <open>1</open>
+      <Url>
+        <href>http://$hostaddress/data/position?rel</href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>1</refreshInterval>
+      </Url>
+    </NetworkLink>
+    <NetworkLink>
+      <name>Track</name>
+      <visibility>0</visibility>
+      <open>1</open>
+      <Url>
+        <href>http://$hostaddress/data/track</href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>1</refreshInterval>
+      </Url>
+    </NetworkLink>
+    <NetworkLink>
+      <name>Projection</name>
+      <visibility>0</visibility>
+      <open>1</open>
+      <Url>
+        <href>http://$hostaddress/data/projection</href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>1</refreshInterval>
+      </Url>
+    </NetworkLink>
+  </Document>
+</kml>

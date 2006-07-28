@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{9C5C2D11-75C8-400A-BBDF-28AC1E2FD63F}") = "MoovingEarth", "MoovingEarth.dproj", "{7D76F911-CBEB-422A-8133-AB123F1B41DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D76F911-CBEB-422A-8133-AB123F1B41DA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7D76F911-CBEB-422A-8133-AB123F1B41DA}.Debug|Win32.Build.0 = Debug|Win32
+		{7D76F911-CBEB-422A-8133-AB123F1B41DA}.Release|Win32.ActiveCfg = Release|Win32
+		{7D76F911-CBEB-422A-8133-AB123F1B41DA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

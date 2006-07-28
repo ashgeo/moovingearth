@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+  <Document>
+    <LookAt>
+      <longitude>$viewlongitude</longitude>
+      <latitude>$viewlatitude</latitude>
+      <heading>$viewdirection</heading>
+      <tilt>$tilt</tilt>
+      <range>$range</range>
+    </LookAt>
+  </Document>
+</kml>
