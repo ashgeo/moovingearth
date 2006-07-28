@@ -1,0 +1,75 @@
+﻿<Project MSBuildVersion="2.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectName>
+    </ProjectName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7d76f911-cbeb-422a-8133-ab123f1b41da}</ProjectGuid>
+    <OutputFileName>
+    </OutputFileName>
+    <OutputType>exe</OutputType>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugMode>true</DebugMode>
+    <AddDebugInfo>true</AddDebugInfo>
+    <ReleaseMode>false</ReleaseMode>
+    <Optimize>false</Optimize>
+    <Inline>false</Inline>
+    <ExtraArguments>-w</ExtraArguments>
+    <IntermediateOutputPath>.\obj\Debug</IntermediateOutputPath>
+    <OutputPath>.\bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugMode>false</DebugMode>
+    <AddDebugInfo>false</AddDebugInfo>
+    <ReleaseMode>true</ReleaseMode>
+    <Optimize>true</Optimize>
+    <Inline>true</Inline>
+    <ExtraArguments>-w</ExtraArguments>
+    <IntermediateOutputPath>.\obj\Release</IntermediateOutputPath>
+    <OutputPath>.\bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="chaseview.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="comm.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="gemath.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ini_win32.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="httpd.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="kmlserver.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="kmlsource.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="nmeahub.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="nmeap.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="planeView.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="readgps.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="views.d">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\VSpluginD\VSpluginD.targets" />
+</Project>

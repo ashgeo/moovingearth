@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+  <Document>
+    <Placemark>
+      <name>Projection</name>
+      <visibility>1</visibility>
+      <Style>
+        <LineStyle>
+          <color>FF0000FF</color>
+          <width>1</width>
+        </LineStyle>
+      </Style>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>$longitude,$latitude,$altitude,$predlongitude,$predlatitude,$altitude</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

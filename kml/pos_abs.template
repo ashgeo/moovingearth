@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+  <Document>
+    <Placemark>
+      <name>Position</name>
+      <visibility>1</visibility>
+      <description>
+        Speed: <b>$speed_kmh</b><i>kmh</i><br/>
+        Altitude: <b>$altitude</b><i>m</i>
+      </description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>root://icons/palette-4.png</href>
+            <x>192</x>
+            <y>256</y>
+            <w>32</w>
+            <h>32</h>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <extrude>1</extrude>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>$longitude,$latitude,$altitude</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
