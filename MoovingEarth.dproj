@@ -37,6 +37,12 @@
     <Compile Include="comm.d">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="nmeasource.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="udpgps.d">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="gemath.d">
       <SubType>Code</SubType>
     </Compile>

@@ -8,11 +8,13 @@ struct Settings_t
 {
 	char[] kmlPath = ".\\kml\\";
 	char[] logPath = ".\\log\\";
-	char[] comPort = "COM2";
-	char[] baudRate = "4800";
-	char[] listenPort = "1234";
-	char[] listenIP = "0.0.0.0";
+	char[] comPort = "";
+	char[] baudRate = "";
+	char[] listenPort = "";
+	char[] listenIP = "";
 	char[] serverName = "My PC";
+	char[] broadcastIP = "";
+	char[] broadcastPort = "";
 
 	void Read() {
 		ReadINIString( "KMLPath", kmlPath );
@@ -21,6 +23,8 @@ struct Settings_t
 		ReadINIString( "BaudRate", baudRate );
 		ReadINIString( "ListenPort", listenPort );
 		ReadINIString( "ListenIP", listenIP );
+		ReadINIString( "BroadcastPort", broadcastPort );
+		ReadINIString( "BroadcastIP", broadcastIP );
 		ReadINIString( "ServerName", serverName );
 	}
 
@@ -31,6 +35,8 @@ struct Settings_t
 		WriteINIString( "BaudRate", baudRate );
 		WriteINIString( "ListenPort", listenPort );
 		WriteINIString( "ListenIP", listenIP );
+		WriteINIString( "BroadcastPort", broadcastPort );
+		WriteINIString( "BroadcastIP", broadcastIP );
 		WriteINIString( "ServerName", serverName );
 	}
 
