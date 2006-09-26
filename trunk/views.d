@@ -27,6 +27,17 @@ char[] fillTemplate( char[] template_kml )
 	return outFile;
 }
 
+char[] age( gps_t gps )
+{
+	// TODO: give the age in readable format
+	// "Actual" or "Now" or "Current" (max 30 sec delay or so)
+	// ".. minutes ago"
+	// ".. hours ago (from 2 hours up to another day)
+	// "Last  tuesday" (max 5-6 days)
+	// "date" (longer ago) 
+	return std.string.format( "%08d %.0f", gps.date, gps.seconds );
+}
+
 // GPS data templates
 char[] fillTemplate( char[] template_kml, gps_t gps )
 {
@@ -45,6 +56,8 @@ char[] fillTemplate( char[] template_kml, gps_t gps )
 	outFile = std.string.replace( outFile, "$predlatitude", std.string.format( "%.7f", gps.history.latitude_pred ) );
 	outFile = std.string.replace( outFile, "$predlongitude", std.string.format( "%.7f", gps.history.longitude_pred ) );
 	outFile = std.string.replace( outFile, "$trail", gps.history.trail );
+
+	outFile = std.string.replace( outFile, "$smarttime", age( gps ) );
 	return outFile;
 }
 

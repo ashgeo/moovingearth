@@ -11,7 +11,7 @@ class UDPGPS : public NMEASource
 	void open( char[] ip, uint _port ) {
 		if (!ip.length)
 			throw new Exception("Invalid UDP IP");
-		writefln( "Starting UDP" );
+		writefln( "Starting UDP "~ip );
 		ushort port = cast (ushort) _port;
 		listen_socket = new UdpSocket;
 		listen_socket.bind( new InternetAddress( ip, port ) );
