@@ -2,7 +2,7 @@
 <kml xmlns="http://earth.google.com/kml/2.0">
   <Document>
     <Placemark>
-      <name>Position</name>
+      <name>$servername $smarttime</name>
       <visibility>1</visibility>
       <description>
         Speed: <b>$speed_kmh</b><i>kmh</i><br/>

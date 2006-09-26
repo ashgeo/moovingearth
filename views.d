@@ -35,7 +35,8 @@ char[] age( gps_t gps )
 	// ".. hours ago (from 2 hours up to another day)
 	// "Last  tuesday" (max 5-6 days)
 	// "date" (longer ago) 
-	return std.string.format( "%08d %.0f", gps.date, gps.seconds );
+	return "";
+//	return std.string.format( "%08d %.0f", gps.date, gps.seconds );
 }
 
 // GPS data templates
