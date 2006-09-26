@@ -1,6 +1,6 @@
 ﻿module comm;
 
-private import win32.winbase;
+private import win32.core;
 pragma ( lib, "win32.lib" );
 private import std.string;
 private import std.stdio;

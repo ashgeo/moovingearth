@@ -1,7 +1,7 @@
 ﻿module ini_win32;
 private import std.string;
 
-private import win32.winbase;
+private import win32.core;
 pragma ( lib, "win32.lib" );
 
 struct Settings_t
