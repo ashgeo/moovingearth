@@ -3,7 +3,7 @@ private import std.string;
 private import std.file,std.c.time;
 
 // imports for ini, webserver, nmeas
-private import nmeasource, httpd, ini_win32, udpgps, nmeacom, nmeafake;
+private import nmeasource, httpd, ini_win32, udpgps, nmeacom, nmeafake, nmealog;
 
 private import nmeahub;
 private NMEASource gps;
@@ -86,6 +86,12 @@ private void run()
 	if (Settings.broadcastIP.length) {
 		Broadcaster = new nmeaBroadcaster( Settings.broadcastIP, cast (uint) Settings.broadcastPort.atoi() );
 		writefln("Broadcasting NMEA on UDP " ~ Settings.broadcastIP ~":" ~ Settings.broadcastPort );
+	}
+
+	auto nmeaLogger Logger;
+	if (Settings.logFile.length) {
+		Logger = new nmeaLogger( Settings.logPath, Settings.logFile );
+		writefln("Logging NMEA to file " ~ Settings.logPath ~ Settings.logFile );
 	}
 
 	while (!kbhit() && (!listener || listener.getState != std.thread.Thread.TS.TERMINATED))

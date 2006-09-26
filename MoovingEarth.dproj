@@ -43,6 +43,9 @@
     <Compile Include="nmeafake.d">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="nmealog.d">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="nmeasource.d">
       <SubType>Code</SubType>
     </Compile>
