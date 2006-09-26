@@ -29,6 +29,7 @@ class nmeaBroadcaster
 {
 	private Socket send_socket;
 	private InternetAddress send_address;
+	private uint sentData;
 
 	this( char[] ip, uint port ) {
 		send_socket = new UdpSocket;
@@ -39,9 +40,14 @@ class nmeaBroadcaster
 			nmeaHub.nmeaProcessors ~= &onNMEA;
 	}
 
+	~this() {
+		writefln( std.string.format( "Sent %d bytes", sentData ) );
+	}
+
 	void onNMEA( ubyte[] data ) {
 		try {
 			send_socket.sendTo( data, send_address ); 
+			sentData += data.length;
 		}
 		catch
 		{
