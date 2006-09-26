@@ -1,6 +1,6 @@
 ﻿module gemath;
 
-import std.math;
+public import std.math;
 
 real deg2rad( real deg )
 {
