@@ -15,10 +15,11 @@ struct Settings_t
 	char[] serverName = "My PC";
 	char[] broadcastIP = "";
 	char[] broadcastPort = "";
+	char[] logFile = "";
 
 	void Read() {
 		ReadINIString( "KMLPath", kmlPath );
-		ReadINIString( "LOGPath", logPath );
+		ReadINIString( "LogPath", logPath );
 		ReadINIString( "GPSPort", comPort );
 		ReadINIString( "BaudRate", baudRate );
 		ReadINIString( "ListenPort", listenPort );
@@ -26,11 +27,12 @@ struct Settings_t
 		ReadINIString( "BroadcastPort", broadcastPort );
 		ReadINIString( "BroadcastIP", broadcastIP );
 		ReadINIString( "ServerName", serverName );
+		ReadINIString( "LogFile", logFile );
 	}
 
 	void Write() {
 		WriteINIString( "KMLPath", kmlPath );
-		WriteINIString( "LOGPath", logPath );
+		WriteINIString( "LogPath", logPath );
 		WriteINIString( "GPSPort", comPort );
 		WriteINIString( "BaudRate", baudRate );
 		WriteINIString( "ListenPort", listenPort );
@@ -38,6 +40,7 @@ struct Settings_t
 		WriteINIString( "BroadcastPort", broadcastPort );
 		WriteINIString( "BroadcastIP", broadcastIP );
 		WriteINIString( "ServerName", serverName );
+		WriteINIString( "LogFile", logFile );
 	}
 
 	private void ReadINIString( char[] item, inout char[] value ) {
