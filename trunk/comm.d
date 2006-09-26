@@ -2,8 +2,8 @@
 
 private import win32.winbase;
 pragma ( lib, "win32.lib" );
-
 private import std.string;
+private import std.stdio;
 
 class CComPort
 {
@@ -101,19 +101,44 @@ class ComPortEx : private CComPort
 	uint readtimeout() { return to.ReadIntervalTimeout; }
 }
 
-class ComPortGPS : ComPortEx
+private import nmeasource;
+private import std.c.time;
+
+class ComPortGPS : public NMEASource
 {
+	private ComPortEx comm;
+
+	this() {
+		comm = new ComPortEx;
+	}
+
+	~this() {
+		delete comm;
+	}
+
 	void open( char[] dev, uint baud = 4800 ) {
-		super.open( dev );
+		if (dev.length==0)
+			throw Object;
+		writefln("Reading from 'com'");
+		return;
+/*		comm.open( dev );
 
-		dcb.BaudRate = baud;		  // set the baud rate
-		dcb.ByteSize = 8;             // data size, xmit, and rcv
-		dcb.Parity = NOPARITY;        // no parity bit
-		dcb.StopBits = ONESTOPBIT;    // one stop bit
-		setState();
+		comm.dcb.BaudRate = baud;		  // set the baud rate
+		comm.dcb.ByteSize = 8;             // data size, xmit, and rcv
+		comm.dcb.Parity = NOPARITY;        // no parity bit
+		comm.dcb.StopBits = ONESTOPBIT;    // one stop bit
+		comm.setState();
 
-		to.ReadIntervalTimeout = 100;
-		setTimeouts();
+		comm.to.ReadIntervalTimeout = 100;
+		comm.setTimeouts();*/
+	}
+
+	uint read( void[] buffer ) {
+		msleep(1000);
+		char[] inn = "$GPRMC,050306,V,4259.8839,N,07130.3922,W,010.3,139.7,291003,,*10\r\n";
+		assert( buffer.length >= inn.length );
+		buffer[0..inn.length] = cast (void[]) inn.dup;
+		return inn.length;
+//		return comm.read( buffer );
 	}
 }
-
