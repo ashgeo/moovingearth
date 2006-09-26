@@ -123,9 +123,9 @@ class gpsReader_t
 
 		// Update the trail
 		char[] pos = std.string.format("%.7f,%.7f,%.1f",gps_work.longitude,gps_work.latitude,gps_work.altitude);
-		if (gps_work.history.trail) // Don't use ~= here: we must make a copy!
+/*		if (gps_work.history.trail) // Don't use ~= here: we must make a copy!
 			gps_work.history.trail = gps_work.history.trail ~ "," ~ pos;
-		else
+		else*/
 			gps_work.history.trail = pos;
 	}
 }
