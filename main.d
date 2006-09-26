@@ -2,8 +2,8 @@
 private import std.string;
 private import std.file,std.c.time;
 
-// imports for comms, ini, webserver
-private import nmeasource, comm, httpd, ini_win32, udpgps;
+// imports for ini, webserver, nmeas
+private import nmeasource, httpd, ini_win32, udpgps, nmeacom, nmeafake;
 
 private import nmeahub;
 private NMEASource gps;
@@ -13,11 +13,21 @@ private void init()
 	try
 	{
 		initCOM;
+		return;
 	}
-	catch
-	{
+	catch {}
+	try {
 		initUDP;
+		return;
 	}
+	catch {}
+	initFAKE;
+}
+
+private void initFAKE()
+{
+	gps = new FakeGPS;
+	gps.open("$$gen", 0 );
 }
 
 private void initCOM()
@@ -87,9 +97,7 @@ private void run()
 		if (read == 0)
 			break;
 
-		writefln("onNMEA");
 		nmeaHub.onNMEA( buffer[0..read] );
-		writefln("OK");
 	}
 	writefln("Stopping");
 	if (listener)

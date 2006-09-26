@@ -37,6 +37,12 @@
     <Compile Include="comm.d">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="nmeacom.d">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="nmeafake.d">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="nmeasource.d">
       <SubType>Code</SubType>
     </Compile>

@@ -6,7 +6,8 @@
       <visibility>1</visibility>
       <description>
         Speed: <b>$speed_kmh</b><i>kmh</i><br/>
-        Altitude: <b>$altitude</b><i>m</i>
+        Altitude: <b>$altitude</b><i>m</i><br/>
+        $smarttime
       </description>
       <Style>
         <IconStyle>
