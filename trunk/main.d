@@ -96,7 +96,7 @@ private void run()
 
 	while (!kbhit() && (!listener || listener.getState != std.thread.Thread.TS.TERMINATED))
 	{
-		ubyte buffer[512];
+		ubyte buffer[4096];
 		uint read = gps.read( buffer );
 
 		// If no data was received, probably the com port was broken (disconnected)
